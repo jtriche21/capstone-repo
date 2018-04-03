@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">downloadFileAsync</string>
+    <string name="downloadText">Download</string>
+    <string name="loadText">Load</string>
+</resources>
