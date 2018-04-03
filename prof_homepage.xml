@@ -1,62 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+package com.example.vanessaperry.demoappscreens;
 
-    <Button
-        android:id="@+id/classSchedule"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:alpha="0.8"
-        android:background="@android:color/background_light"
-        android:onClick="classSchedule"
-        android:text="Class Schedule"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-    <Button
-        android:id="@+id/Announcements"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:alpha="0.8"
-        android:background="@android:color/background_light"
-        android:onClick="announcements"
-        android:text="Announcements"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classSchedule"
-        app:layout_constraintVertical_bias="0.0" />
+/**
+ * Created by vanessaperry on 4/1/18.
+ */
 
-    <TextView
-        android:id="@+id/display"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:alpha="0.8"
-        android:background="@android:color/background_light"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Announcements" />
-</android.support.constraint.ConstraintLayout>
+public class ProfHome extends Activity {
+
+    Button classS;
+    Button announce;
+    TextView display;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.prof_homepage);
+
+        classS = findViewById(R.id.classSchedule);
+        announce = findViewById(R.id.Announcements);
+        display = findViewById(R.id.display);
+    }
+
+    public void announcements(View view){
+        String example = "Dr. Andrew Scott\nAnnouncements:\n\nTest 2 Friday March 16th";
+        display.setText(example);
+    }
+
+    public void classSchedule(View view){
+        String example = "Dr. Andrew Scott\nMeeting Times and Locations:\n\nMonday:\nCS263 Software Eng 10:10am-11:00am ST149\n" +
+                "CS253 Software Dev 1:25pm-2:15pm MK215 \nOffice Hours 3:00-4:00pm ST439\n\n" +
+                "Tuesday:\nOffice Hours 9:30-11:00pm ST439\nCS467 Mobile Apps 2:00pm-3:15pm F0303\n\n" +
+                "Wednesday:\nCS263 Software Eng 10:10am-11:00am ST149\n" +
+                "CS253 Software Dev 1:25pm-2:15pm MK215 \nOffice Hours 3:00-4:00pm ST439\n\n" +
+                "Thursday:\nOffice Hours 9:30-11:00pm ST439\nCS467 Mobile Apps 2:00pm-3:15pm F0303\n\n" +
+                "Friday:\nCS263 Software Eng 10:10am-11:00am ST149\n" +
+                "CS253 Software Dev 1:25pm-2:15pm MK215 \nOffice Hours 3:00-4:00pm ST439\n";
+        display.setText(example);
+    }
+}
