@@ -26,12 +26,12 @@ public class ProfHome extends Activity {
     }
 
     public void announcements(View view){
-        String example = "Announcements:\n\nTest 2 Friday March 16th";
+        String example = "Dr. Andrew Scott\nAnnouncements:\n\nTest 2 Friday March 16th";
         display.setText(example);
     }
 
     public void classSchedule(View view){
-        String example = "Meeting Times and Locations:\n\nMonday:\nCS263 Software Eng 10:10am-11:00am ST149\n" +
+        String example = "Dr. Andrew Scott\nMeeting Times and Locations:\n\nMonday:\nCS263 Software Eng 10:10am-11:00am ST149\n" +
                 "CS253 Software Dev 1:25pm-2:15pm MK215 \nOffice Hours 3:00-4:00pm ST439\n\n" +
                 "Tuesday:\nOffice Hours 9:30-11:00pm ST439\nCS467 Mobile Apps 2:00pm-3:15pm F0303\n\n" +
                 "Wednesday:\nCS263 Software Eng 10:10am-11:00am ST149\n" +
