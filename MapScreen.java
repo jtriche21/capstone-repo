@@ -20,8 +20,8 @@ public class MapScreen extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mapscreen);
 
-        //active = findViewById(R.id.active_button);
-        inactive = findViewById(R.id.inactive_button);
+        active = findViewById(R.id.professer4_activebutton);
+        inactive = findViewById(R.id.professer1_inactivebutton);
     }
 
     public void Inactive(View view){
