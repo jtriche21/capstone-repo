@@ -6,7 +6,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
+//import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedInputStream;
@@ -21,12 +22,12 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.concurrent.ExecutionException;
+//import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
     Button d, l;
-    TextView tv;
+    EditText tv;
     String agora = "https://agora.cs.wcu.edu/~jtriche1/";
     String filename = "downloaded_html.txt";
     File file;
@@ -38,7 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         d = findViewById(R.id.dButton);
         l = findViewById(R.id.lButton);
-        TextView tv = findViewById(R.id.textView);
+        tv = findViewById(R.id.textView);
         file  = new File(this.getFilesDir(), filename);
         d.setOnClickListener(this);
         l.setOnClickListener(this);
@@ -50,11 +51,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         if(view == d){
             save();
         }else if(view == l){//the letter l not the number one
-            String temp = load();
-            if(tv == null){
-                Toast.makeText(getApplicationContext(), "the textView is null", Toast.LENGTH_LONG).show();
-            }
-            //tv.setText(temp);
+            load();
         }
     }
 
@@ -65,7 +62,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     }
 
-    public String load(){
+    public void load(){
         StringBuilder text = new StringBuilder();
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -84,9 +81,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         String data = new String(text);
         if(data.length() > 0){
             file.delete();
-            return data;
+            tv.setText(data);
         }
-        return "load() failed";
 
     }
 

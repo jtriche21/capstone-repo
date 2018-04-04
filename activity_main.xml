@@ -4,21 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jeremy.downloadfileasync.MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="362dp"
-        android:layout_height="415dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/text_border"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    tools:context="com.example.jeremy.downloadfileasync.MainActivity"
+    android:background="@drawable/app_background">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,6 +25,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/button_border"
+            android:text="@string/downloadText"
             tools:text="@string/downloadText" />
 
         <Button
@@ -46,6 +34,23 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/button_border"
+            android:text="@string/loadText"
             tools:text="@string/loadText" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/textView"
+        android:layout_width="362dp"
+        android:layout_height="401dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </android.support.constraint.ConstraintLayout>
